@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="4.0" jmeter="4.0 r1823414">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="http/2" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">180</stringProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.duration">600</stringProp>
+        <stringProp name="ThreadGroup.delay">0</stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <com.blazemeter.jmeter.http2.sampler.HTTP2Request guiclass="com.blazemeter.jmeter.http2.sampler.gui.HTTP2RequestGui" testclass="com.blazemeter.jmeter.http2.sampler.HTTP2Request" testname="GET Request" enabled="false">
+          <boolProp name="HTTP2Request.postBodyRaw">true</boolProp>
+          <elementProp name="HTTP2Request.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTP2Request.domain">localhost</stringProp>
+          <stringProp name="HTTPSampler.port">9090</stringProp>
+          <stringProp name="HTTP2Request.response_timeout">30000</stringProp>
+          <stringProp name="HTTP2Request.protocol">https</stringProp>
+          <stringProp name="HTTP2Request.contentEncoding"></stringProp>
+          <stringProp name="HTTP2Request.path">/passthrough</stringProp>
+          <stringProp name="HTTP2Sampler.method">GET</stringProp>
+          <boolProp name="HTTP2Request.follow_redirects">true</boolProp>
+          <boolProp name="HTTP2Request.auto_redirects">false</boolProp>
+          <stringProp name="HTTP2Request.request_id"></stringProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+        </com.blazemeter.jmeter.http2.sampler.HTTP2Request>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">content-type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <com.blazemeter.jmeter.http2.sampler.HTTP2Request guiclass="com.blazemeter.jmeter.http2.sampler.gui.HTTP2RequestGui" testclass="com.blazemeter.jmeter.http2.sampler.HTTP2Request" testname="POST Request - 50B" enabled="false">
+          <boolProp name="HTTP2Request.postBodyRaw">true</boolProp>
+          <elementProp name="HTTP2Request.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+  &quot;counter&quot;: ${P},&#xd;
+  &quot;id&quot;: &quot;5ad96c&quot;,&#xd;
+  &quot;name&quot;: &quot;hello-ballerina&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTP2Request.domain">localhost</stringProp>
+          <stringProp name="HTTPSampler.port">9090</stringProp>
+          <stringProp name="HTTP2Request.response_timeout">30000</stringProp>
+          <stringProp name="HTTP2Request.protocol"></stringProp>
+          <stringProp name="HTTP2Request.contentEncoding"></stringProp>
+          <stringProp name="HTTP2Request.path">/passthrough</stringProp>
+          <stringProp name="HTTP2Sampler.method">POST</stringProp>
+          <boolProp name="HTTP2Request.follow_redirects">true</boolProp>
+          <boolProp name="HTTP2Request.auto_redirects">false</boolProp>
+          <stringProp name="HTTP2Request.request_id"></stringProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+        </com.blazemeter.jmeter.http2.sampler.HTTP2Request>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">content-type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">String uuid = UUID.randomUUID().toString();
+vars.put(&quot;P&quot;,uuid);</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="1193284">${P}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+            <stringProp name="Assertion.scope">variable</stringProp>
+            <stringProp name="Scope.variable">P</stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <com.blazemeter.jmeter.http2.sampler.HTTP2Request guiclass="com.blazemeter.jmeter.http2.sampler.gui.HTTP2RequestGui" testclass="com.blazemeter.jmeter.http2.sampler.HTTP2Request" testname="POST Request - 1KB" enabled="true">
+          <boolProp name="HTTP2Request.postBodyRaw">true</boolProp>
+          <elementProp name="HTTP2Request.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">[&#xd;
+  {&#xd;
+    &quot;counter&quot;: ${P},&#xd;
+    &quot;_id&quot;: &quot;5ad96cb346c853a82a7f6e5a&quot;,&#xd;
+    &quot;index&quot;: 0,&#xd;
+    &quot;guid&quot;: &quot;90ee1227-0003-4a22-bbad-e5fba1d1cc69&quot;,&#xd;
+    &quot;isActive&quot;: true,&#xd;
+    &quot;balance&quot;: &quot;$3,960.23&quot;,&#xd;
+    &quot;picture&quot;: &quot;http://placehold.it/32x32&quot;,&#xd;
+    &quot;age&quot;: 35,&#xd;
+    &quot;eyeColor&quot;: &quot;blue&quot;,&#xd;
+    &quot;name&quot;: &quot;Vasquez Cortez&quot;,&#xd;
+    &quot;gender&quot;: &quot;male&quot;,&#xd;
+    &quot;company&quot;: &quot;OCEANICA&quot;,&#xd;
+    &quot;email&quot;: &quot;vasquezcortez@oceanica.com&quot;,&#xd;
+    &quot;phone&quot;: &quot;+1 (817) 538-2644&quot;,&#xd;
+    &quot;address&quot;: &quot;932 Erskine Loop, Comptche, Iowa, 645&quot;,&#xd;
+    &quot;about&quot;: &quot;Fugiat est Lorem mollit pariatur culpa eu. In est velit magna id eiusmod veniam cupidatat. Esse commodo duis labore esse ipsum ut exercitation. Qui dolore cillum exercitation mollit dolore dolore laboris sit ea eiusmod adipisicing. Non ex do aliquip ex ullamco do cupidatat. Sint qui ut pariatur est duis consequat ex nulla do elit dolor eu occaecat. Consectetur non consequat ullamco amet.\r\n&quot;,&#xd;
+    &quot;registered&quot;: &quot;2017-09-06T04:16:16 -06:-30&quot;,&#xd;
+    &quot;greeting&quot;: &quot;Hello, Vasquez Cortez! You have 6 unread messages.&quot;,&#xd;
+    &quot;favoriteFruit&quot;: &quot;banana&quot;&#xd;
+  }&#xd;
+]</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTP2Request.domain">localhost</stringProp>
+          <stringProp name="HTTPSampler.port">9090</stringProp>
+          <stringProp name="HTTP2Request.response_timeout">30000</stringProp>
+          <stringProp name="HTTP2Request.protocol"></stringProp>
+          <stringProp name="HTTP2Request.contentEncoding"></stringProp>
+          <stringProp name="HTTP2Request.path">/passthrough</stringProp>
+          <stringProp name="HTTP2Sampler.method">POST</stringProp>
+          <boolProp name="HTTP2Request.follow_redirects">true</boolProp>
+          <boolProp name="HTTP2Request.auto_redirects">false</boolProp>
+          <stringProp name="HTTP2Request.request_id"></stringProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+        </com.blazemeter.jmeter.http2.sampler.HTTP2Request>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">content-type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">String uuid = UUID.randomUUID().toString();
+vars.put(&quot;P&quot;,uuid);</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="1193284">${P}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+            <stringProp name="Assertion.scope">variable</stringProp>
+            <stringProp name="Scope.variable">P</stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="com.blazemeter.jmeter.http2.visualizers.ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Result Tree Http2" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
