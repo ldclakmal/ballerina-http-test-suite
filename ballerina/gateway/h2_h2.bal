@@ -36,8 +36,8 @@ service passthroughService on passthroughListener {
         } else {
             log:printError("Error at passthrough service", err = response);
             http:Response res = new;
-            res.statusCode = http:INTERNAL_SERVER_ERROR_500;
-            json errMsg = { message: <string>response.detail().message };
+            res.statusCode = http:STATUS_INTERNAL_SERVER_ERROR;
+            json errMsg = { message: <string>response.detail()?.message };
             res.setPayload(errMsg);
             checkpanic outboundEP->respond(res);
         }

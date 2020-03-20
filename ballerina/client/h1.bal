@@ -19,10 +19,10 @@ public function main() {
         if (payload is string) {
             log:printInfo(payload);
         } else {
-            log:printError(<string>payload.detail().message);
+            log:printError(<string>payload.detail()?.message);
         }
     } else {
-        log:printError(<string>respGet.detail().message);
+        log:printError(<string>respGet.detail()?.message);
     }
 
     var respPost = clientEP->post("/passthrough", "Hello Ballerina!");
@@ -31,9 +31,9 @@ public function main() {
         if (payload is string) {
             log:printInfo(payload);
         } else {
-            log:printError(<string>payload.detail().message);
+            log:printError(<string>payload.detail()?.message);
         }
     } else {
-        log:printError(<string>respPost.detail().message);
+        log:printError(<string>respPost.detail()?.message);
     }
 }
