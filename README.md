@@ -5,7 +5,6 @@ This is a HTTP test suite which contains followings as the resources.
 - [JMeter](https://jmeter.apache.org/) scrips
 - [Netty](https://netty.io/) backend
 - Sample JSON payloads
-- Ballerina performance test results of each version
 
 ### Compatibility
 
