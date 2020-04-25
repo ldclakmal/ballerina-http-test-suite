@@ -1,4 +1,4 @@
-# Ballerina HTTP Test Suites
+# Ballerina HTTP Test Suite
 
 This is a HTTP test suite which contains followings as the resources.
 - [Ballerina](https://ballerina.io) samples for backend, client and gateway
