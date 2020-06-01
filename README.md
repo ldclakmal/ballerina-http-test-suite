@@ -1,7 +1,7 @@
 # Ballerina HTTP Test Suite
 
-This is a HTTP test suite which contains followings as the resources.
-- [Ballerina](https://ballerina.io) samples for backend, client and gateway
+This is an HTTP test suite which contains followings as the resources.
+- [Ballerina](https://ballerina.io) samples for a backend, client and gateway
 - [JMeter](https://jmeter.apache.org/) scrips
 - [Netty](https://netty.io/) backend
 - Sample JSON payloads
