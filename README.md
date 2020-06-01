@@ -12,9 +12,26 @@ This is an HTTP test suite which contains followings as the resources.
 
 ## How to run
 
-1. Refer the [Getting Started](https://ballerina.io/learn/getting-started/) guide to download and install Ballerina.
+First you have to create 3 instances for JMeter, Ballerina and Netty. If not you can run all in single instance.
 
-2. Run the particular *.bal* files by executing following command.
+### JMeter
 
-    `$ ballerina run file_name.bal`
-    
+- You can import and use the [JMX](./jmeter/) files for HTTP1.1 or HTTP2.0 as required.
+
+### Ballerina
+
+- Refer the [Getting Started](https://ballerina.io/learn/getting-started/) guide to download and install Ballerina.
+- Run the particular [gateway](./ballerina/gateway/) *.bal* files by executing following command.
+
+    `$ ballerina run <file_name.bal>`
+
+### Netty
+
+- You can run the Docker image of Netty Echo Backend as required.
+
+    - h1c - `$ docker run -d -p 8688:8688 ldclakmal/netty-echo-backend`
+    - h1 - `$ docker run -d -p 8688:8688 -e "SSL=true" ldclakmal/netty-echo-backend`
+    - h2c - `$ docker run -d -p 8688:8688 -e "HTTP2=true" ldclakmal/netty-echo-backend`
+    - h2 - `$ docker run -d -p 8688:8688 -e "HTTP2=true" -e "SSL=true" ldclakmal/netty-echo-backend`
+
+- Refer the [Docker Hub Image](https://hub.docker.com/repository/docker/ldclakmal/netty-echo-backend) for more information.
