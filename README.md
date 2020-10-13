@@ -1,6 +1,6 @@
 # Ballerina HTTP Test Suite
 
-This is an HTTP test suite which contains followings as the resources.
+This is an HTTP test suite which contains followings as the resources. This is used to execute performance tests for Ballerina.
 - [Ballerina](https://ballerina.io) samples for a backend, client and gateway
 - [JMeter](https://jmeter.apache.org/) scrips
 - [Netty](https://netty.io/) backend
@@ -10,24 +10,28 @@ This is an HTTP test suite which contains followings as the resources.
 
 **Ballerina version:** 1.2.0
 
-## How to run
+## Setup
 
-First you have to create 3 instances for JMeter, Ballerina and Netty. If not you can run all in single instance.
+First you have to create 3 instances (VMs / Physical Machines) for JMeter, Ballerina and Netty. 
+If not you can run all in single instance.
 
 ### JMeter
 
-- You can import and use the [JMX](./jmeter/) files for HTTP1.1 or HTTP2.0 as required.
+- Download and install [Apache JMeter](https://jmeter.apache.org/).
+- Start JMeter of GUI Mode. Refer [Getting Started](https://jmeter.apache.org/usermanual/get-started.html) for more information.
+- Import and use the [JMX](./jmeter/) files for HTTP1.1 or HTTP2.0 as required.
 
 ### Ballerina
 
-- Refer the [Getting Started](https://ballerina.io/learn/getting-started/) guide to download and install Ballerina.
+- Download and install [Ballerina](https://ballerina.io/).
 - Run the particular [gateway](./ballerina/gateway/) *.bal* files by executing following command.
 
     `$ ballerina run <file_name.bal>`
 
 ### Netty
 
-- You can run the Docker image of Netty Echo Backend as required.
+- Download and install [Docker](https://www.docker.com/).
+- Run the Docker image of Netty Echo Backend as required.
 
     - h1c - `$ docker run -d -p 8688:8688 ldclakmal/netty-echo-backend`
     - h1 - `$ docker run -d -p 8688:8688 -e "SSL=true" ldclakmal/netty-echo-backend`
@@ -35,3 +39,13 @@ First you have to create 3 instances for JMeter, Ballerina and Netty. If not you
     - h2 - `$ docker run -d -p 8688:8688 -e "HTTP2=true" -e "SSL=true" ldclakmal/netty-echo-backend`
 
 - Refer the [Docker Hub Image](https://hub.docker.com/repository/docker/ldclakmal/netty-echo-backend) for more information.
+
+## How to run
+
+Now, you can start the JMeter with a single request to check whether the request-response path is properly configured.
+
+![JMeter Single Request](./jmeter/img/single-request.png)
+
+If not, check the URLs and ports of JMeter, Ballerina Service and Netty Backend and figure out the issue.
+
+If the response is received successfully, start the performance test with the required number of threads, ramp-up period and time.
