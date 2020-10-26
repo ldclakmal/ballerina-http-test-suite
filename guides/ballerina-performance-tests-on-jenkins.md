@@ -36,6 +36,6 @@ $ scp -i ~/.ssh/ballerina-performance.key /home/chanakal/Downloads/ballerina.deb
 
 **Jenkins Node:** `$ ssh -i ~/.ssh/ballerina-performance.key ubuntu@192.168.114.17`
 
-**Bastion Node:** `$ ssh -i ballerina_aws.pem ubuntu@35.172.33.196`
+**Bastion Node:** `$ ssh -i ~/ballerina_aws.pem ubuntu@<instance-public-ip>`
 
-**Ballerina Node:** `$ ssh -i private_key.pem ubuntu@10.0.1.244`
+**Ballerina Node:** `$ ssh -i ~/private_key.pem ubuntu@<instance-private-ip>`
