@@ -32,10 +32,19 @@ $ scp -i ~/.ssh/ballerina-performance.key /home/chanakal/Downloads/ballerina.deb
 
 ### NOTES
 
-**Working Directory:** `$ /build/jenkins-home/workspace/ballerina-platform/`
+##### jenkins node:
+`$ ssh -i ~/.ssh/ballerina-performance.key ubuntu@192.168.114.17`
 
-**Jenkins Node:** `$ ssh -i ~/.ssh/ballerina-performance.key ubuntu@192.168.114.17`
+`$ cd /build/jenkins-home/workspace/ballerina-platform/`
 
-**Bastion Node:** `$ ssh -i ~/ballerina_aws.pem ubuntu@<instance-public-ip>`
+##### nodes in public subnet:
 
-**Ballerina Node:** `$ ssh -i ~/private_key.pem ubuntu@<instance-private-ip>`
+We can connect to bastion, jmeter-client nodes from the jenkins node.
+
+`$ ssh -i ~/ballerina_aws.pem ubuntu@<instance-public-ip>`
+
+##### nodes in private subnet:
+
+We can connect to backend, ballerina, jmeter-server-1, jmeter-server-2 nodes from the bastion node.
+
+`$ ssh -i ~/private_key.pem ubuntu@<instance-private-ip>`
