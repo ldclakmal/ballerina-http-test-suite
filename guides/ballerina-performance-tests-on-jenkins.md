@@ -48,3 +48,10 @@ We can connect to bastion, jmeter-client nodes from the jenkins node.
 We can connect to backend, ballerina, jmeter-server-1, jmeter-server-2 nodes from the bastion node.
 
 `$ ssh -i ~/private_key.pem ubuntu@<instance-private-ip>`
+
+---
+
+### Resources
+
+https://github.com/wso2/performance-common
+https://github.com/ballerina-platform/ballerina-performance
