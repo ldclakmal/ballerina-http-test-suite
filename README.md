@@ -1,6 +1,8 @@
 # Ballerina HTTP Test Suite
 
-This is an HTTP test suite which contains followings as the resources. This is used to execute performance tests for Ballerina.
+This is an HTTP test suite which contains guide and all resources to execute performance tests for Ballerina in a local machine or VM.
+
+### Resources
 - [Ballerina](https://ballerina.io) samples for a backend, client and gateway
 - [JMeter](https://jmeter.apache.org/) scrips
 - [Netty](https://netty.io/) backend
@@ -12,8 +14,7 @@ This is an HTTP test suite which contains followings as the resources. This is u
 
 ## Setup
 
-First you have to create 3 instances (VMs / Physical Machines) for JMeter, Ballerina and Netty. 
-If not you can run all in single instance.
+First you have to create 3 instances (VMs / Physical Machines) for JMeter, Ballerina and Netty. Alternatively, you can run all in single instance.
 
 ### JMeter
 
@@ -40,7 +41,7 @@ If not you can run all in single instance.
 
 - Refer the [Docker Hub Image](https://hub.docker.com/repository/docker/ldclakmal/netty-echo-backend) for more information.
 
-## How to run
+## Let's Start
 
 Now, you can start the JMeter with a single request to check whether the request-response path is properly configured.
 
