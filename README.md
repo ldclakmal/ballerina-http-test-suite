@@ -10,7 +10,7 @@ This is an HTTP test suite which contains guide and all resources to execute per
 
 ### Compatibility
 
-**Ballerina version:** 1.2.0
+**Ballerina version:** Swan Lake Beta 1
 
 ## Setup
 
@@ -25,7 +25,7 @@ First you have to create 3 instances (VMs / Physical Machines) for JMeter, Balle
 ### Ballerina
 
 - Download and install [Ballerina](https://ballerina.io/).
-- Run the particular [gateway](./ballerina/gateway/) *.bal* files by executing following command.
+- Run the particular [gateway](https://github.com/ballerina-platform/ballerina-performance/tree/master/distribution/scripts/ballerina/bal) *.bal* files by executing following command.
 
     `$ ballerina run <file_name.bal>`
 
