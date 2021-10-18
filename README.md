@@ -3,18 +3,13 @@
 This is an HTTP test suite which contains guide and all resources to execute performance tests for Ballerina in a local machine or VM.
 
 ### Resources
-- [Ballerina](https://ballerina.io) samples for a backend, client and gateway
 - [JMeter](https://jmeter.apache.org/) scrips
 - [Netty](https://netty.io/) backend
 - Sample JSON payloads
 
-### Compatibility
-
-**Ballerina version:** Swan Lake Beta 1
-
 ## Setup
 
-First you have to create 3 instances (VMs / Physical Machines) for JMeter, Ballerina and Netty. Alternatively, you can run all in single instance.
+First you have to create 3 instances (VMs/Physical Machines) for JMeter, Ballerina and Netty. Alternatively, you can run all in single instance.
 
 ### JMeter
 
@@ -27,7 +22,7 @@ First you have to create 3 instances (VMs / Physical Machines) for JMeter, Balle
 - Download and install [Ballerina](https://ballerina.io/).
 - Run the particular [gateway](https://github.com/ballerina-platform/ballerina-performance/tree/master/distribution/scripts/ballerina/bal) *.bal* files by executing following command.
 
-    `$ ballerina run <file_name.bal>`
+    `$ bal run <file_name.bal>`
 
 ### Netty
 
